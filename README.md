@@ -20,4 +20,4 @@ Requires OpenCV 4.4.0 or later to be installed. Also requires CUDA and cuDNN to 
 
 ## Pre-built Binaries
 
-You can find a pre-built DLL for Windows x64 in `Builds\x64\Release`. This has been built for CUDA versions 6.1, 7.0 and 7.5. You will therefore require a Pascal or Turning card.
+You can find a pre-built DLL for Windows x64 through the releases link above. Note that v1.0 has been built for CUDA versions 6.1, 7.0 and 7.5. You will therefore require a Pascal or Turning card.
