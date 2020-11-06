@@ -35,7 +35,7 @@ int detect(detector* instance, float* source, int width, int height, bbox* boxes
 	for (int c = 0; c < 3; ++c)
 	{
 		const int destination_channel_offset = width * height * c;
-		const int source_channel_offset = width * height * (2 - c);
+		const int source_channel_offset = width * height * c;
 		for (int y = 0; y < height; ++y)
 		{
 			const int destination_row_offset = destination_channel_offset + width * y;
