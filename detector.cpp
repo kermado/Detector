@@ -19,7 +19,7 @@ void release(detector* instance)
 	delete instance;
 }
 
-int detect(detector* instance, float* source, int width, int height, bbox* boxes)
+int detect(detector* instance, float* source, int width, int height, bool swap, bbox* boxes)
 {
 	cv::Mat& blob = instance->blob;
 
@@ -34,8 +34,9 @@ int detect(detector* instance, float* source, int width, int height, bbox* boxes
 	float* destination = (float*)blob.data;
 	for (int c = 0; c < 3; ++c)
 	{
+		const int source_channel = (swap) ? (2 - c) : c;
 		const int destination_channel_offset = width * height * c;
-		const int source_channel_offset = width * height * c;
+		const int source_channel_offset = width * height * source_channel;
 		for (int y = 0; y < height; ++y)
 		{
 			const int destination_row_offset = destination_channel_offset + width * y;

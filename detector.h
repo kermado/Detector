@@ -31,4 +31,4 @@ struct bbox
 
 EXPORT detector* create(const char* configuration_path, const char* weights_path);
 EXPORT void release(detector* instance);
-EXPORT int detect(detector* instance, float* source, int width, int height, bbox* boxes);
+EXPORT int detect(detector* instance, float* source, int width, int height, bool swap, bbox* boxes);
